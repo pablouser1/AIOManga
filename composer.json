@@ -1,0 +1,21 @@
+{
+    "name": "pablouser1/aiomanga",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "Components\\": "src/ViewiApp/Components/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pablo Ferreiro",
+            "email": "me@pabloferreiro.es"
+        }
+    ],
+    "require": {
+        "viewi/viewi": "^1.0",
+        "illuminate/database": "^10.4",
+        "vlucas/phpdotenv": "^5.5"
+    }
+}

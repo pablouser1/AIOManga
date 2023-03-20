@@ -1,0 +1,5 @@
+/.vscode
+/.env
+/vendor
+/public/viewi-build
+/src/ViewiApp/build

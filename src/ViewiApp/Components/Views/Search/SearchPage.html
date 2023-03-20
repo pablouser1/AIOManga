@@ -1,0 +1,35 @@
+<Simple title="$title">
+  <div class="field has-addons">
+    <div class="control is-expanded">
+      <input model="$term" class="input" type="text" />
+    </div>
+    <div class="control">
+      <div class="select">
+        <select model="$chosenPlugin">
+          <option disabled value="">Please select one</option>
+          <option foreach="$plugins as $plugin" value="$plugin->id">$plugin->name</option>
+        </select>
+      </div>
+    </div>
+    <div class="control">
+      <button (click)="search()" class="button is-success" type="button">Go</button>
+    </div>
+  </div>
+  <div class="columns is-centered is-vcentered is-multiline">
+    <div foreach="$mangas as $manga" class="column is-one-quarter">
+      <Card>
+        <slotContent name="header">
+          <p class="card-header-title">$manga->name</p>
+        </slotContent>
+        <slotContent name="image">
+          <figure class="image">
+            <img src="$manga->cover" alt="$manga->name" />
+          </figure>
+        </slotContent>
+        <slotContent name="footer">
+          <a href="/plugins/{$chosenPlugin}/manga/{$manga->id}" class="card-footer-item">Go</a>
+        </slotContent>
+      </Card>
+    </div>
+  </div>
+</Simple>
