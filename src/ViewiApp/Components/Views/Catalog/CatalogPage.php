@@ -1,12 +1,12 @@
 <?php
-namespace Components\Views\Search;
+namespace Components\Views\Catalog;
 
 use App\Models\Response;
 use Viewi\BaseComponent;
 use Viewi\Common\HttpClient;
 
-class SearchPage extends BaseComponent {
-    public string $title = 'Search';
+class CatalogPage extends BaseComponent {
+    public string $title = 'Catalog';
     public string $term = "";
     public string $chosenPlugin = "";
     public array $plugins = [];
@@ -33,7 +33,7 @@ class SearchPage extends BaseComponent {
     public function search() {
         $plugin = $this->chosenPlugin;
         $term = $this->term;
-        $this->http->get("/api/plugins/" . $plugin . "/search/?term=" . $term)->then(
+        $this->http->get("/api/plugins/" . $plugin . "/catalog?term=" . $term)->then(
             function (Response $res) {
                 $this->mangas = $res->data;
             },

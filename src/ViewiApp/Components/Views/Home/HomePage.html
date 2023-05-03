@@ -4,7 +4,7 @@
     <p class="subtitle">Your all in one manga reader</p>
     <p class="has-text-centered mb-2">Available platforms:</p>
     <Loader loading="$loading">
-      <div class="columns is-centered is-vcentered is-multiline">
+      <div class="columns scroll">
         <div foreach="$plugins as $plugin" class="column is-narrow has-text-centered">
           <figure class="image is-128x128 is-inline-block">
             <img src="$plugin->icon" alt="$plugin->name" />

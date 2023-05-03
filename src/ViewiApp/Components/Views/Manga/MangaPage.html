@@ -1,0 +1,26 @@
+<Simple title="$title">
+  <Loader loading="$loading">
+    <div if="$manga !== null" class="columns">
+      <div class="column is-one-quarter has-text-centered">
+        <figure class="image is-inline-block">
+          <img src="$manga->cover" alt="$manga->name" />
+        </figure>
+      </div>
+      <div class="column is-three-quarter">
+        <p class="title is-size-4">$manga->name</p>
+        <p>$manga->description</p>
+        <div class="box" foreach="$chapters as $chapter">
+          <div class="content">
+            <p>
+              <strong if="$chapter->chapNum">Chapter $chapter->chapNum</strong>
+              <strong if="$chapter->volNum">$chapter->volNum</strong>
+              <span if="$chapter->name">- $chapter->name</span>
+              <small>$chapter->scanlator</small> <small>$chapter->lang</small>
+            </p>
+            <a href="/plugins/{$pluginId}/manga/{$mangaId}/chapter/{$chapter->id}">See</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Loader>
+</Simple>

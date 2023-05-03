@@ -1,0 +1,11 @@
+<Simple title="$title">
+  <Loader loading="$loading">
+    <div if="isset($pages)" class="columns is-multiline">
+      <div class="column is-one-quarter" foreach="$pages as $i => $page">
+        <figure class="image">
+          <img src="$page" alt="Page {$i + 1}" />
+        </figure>
+      </div>
+    </div>
+  </Loader>
+</Simple>
