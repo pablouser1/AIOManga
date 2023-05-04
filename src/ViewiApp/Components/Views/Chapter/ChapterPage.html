@@ -1,11 +1,31 @@
-<Simple title="$title">
-  <Loader loading="$loading">
-    <div if="isset($pages)" class="columns is-multiline">
-      <div class="column is-one-quarter" foreach="$pages as $i => $page">
-        <figure class="image">
-          <img src="$page" alt="Page {$i + 1}" />
-        </figure>
-      </div>
+<!DOCTYPE html>
+<html lang="en" (keydown)="onKeyDown($event)">
+  <Heading title="$title" />
+
+  <body>
+    <div id="app">
+      <Loader loading="$loading">
+        <section if="isset($pages)" class="hero is-fullheight">
+          <div class="hero-head">
+            <Navbar />
+          </div>
+          <div class="hero-body">
+            <img class="page" src="{$pages[$pageIdx]}" alt="Page {$pageIdx + 1}" />
+          </div>
+          <div class="hero-foot">
+            <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+              <a class="pagination-previous" (click)="changePage($pageIdx - 1)">Previous</a>
+              <a class="pagination-next" (click)="changePage($pageIdx + 1)">Next page</a>
+              <ul class="pagination-list">
+                <li foreach="$pages as $i => $page">
+                  <a (click)="changePage($i)" class="pagination-link" class.is-current="$i === $pageIdx">{$i + 1}</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+      </Loader>
     </div>
-  </Loader>
-</Simple>
+    <ViewiScripts />
+  </body>
+</html>

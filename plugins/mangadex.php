@@ -10,6 +10,7 @@ class MangadexPlugin extends BasePlugin {
             "mangadex",
             "MangaDex",
             "1.0.0",
+            "https://mangadex.org",
             "MangaDex plugin",
             "/icons/mangadex.svg",
             ["Pablo Ferreiro"]

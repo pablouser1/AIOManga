@@ -6,10 +6,12 @@
     <Loader loading="$loading">
       <div class="columns scroll">
         <div foreach="$plugins as $plugin" class="column is-narrow has-text-centered">
-          <figure class="image is-128x128 is-inline-block">
-            <img src="$plugin->icon" alt="$plugin->name" />
-          </figure>
-          <p>$plugin->name</p>
+          <a href="$plugin->website" target="_blank">
+            <figure class="image is-128x128 is-inline-block">
+              <img src="$plugin->icon" alt="$plugin->name" />
+            </figure>
+            <p>$plugin->name</p>
+          </a>
         </div>
       </div>
     </Loader>

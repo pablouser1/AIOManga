@@ -19,7 +19,7 @@ class CatalogPage extends BaseComponent {
     }
 
     function __rendered() {
-        $this->http->get("/api/plugins")->then(
+        $this->http->get("/api/v1/plugins")->then(
             function (Response $res) {
                 $this->plugins = $res->data;
                 $this->loading = false;
@@ -33,7 +33,7 @@ class CatalogPage extends BaseComponent {
     public function search() {
         $plugin = $this->chosenPlugin;
         $term = $this->term;
-        $this->http->get("/api/plugins/" . $plugin . "/catalog?term=" . $term)->then(
+        $this->http->get("/api/v1/plugins/" . $plugin . "/catalog?term=" . $term)->then(
             function (Response $res) {
                 $this->mangas = $res->data;
             },

@@ -22,7 +22,7 @@ class MangaPage extends BaseComponent {
     }
 
     function __rendered() {
-        $this->http->get("/api/plugins/" . $this->pluginId . '/manga/' . $this->mangaId)->then(
+        $this->http->get("/api/v1/plugins/" . $this->pluginId . '/manga/' . $this->mangaId)->then(
             function (Response $res) {
                 $this->manga = $res->data;
                 $this->title = $this->manga->name;
@@ -33,7 +33,7 @@ class MangaPage extends BaseComponent {
             }
         );
 
-        $this->http->get("/api/plugins/" . $this->pluginId . '/manga/' . $this->mangaId . '/chapters')->then(
+        $this->http->get("/api/v1/plugins/" . $this->pluginId . '/manga/' . $this->mangaId . '/chapters')->then(
             function (Response $res) {
                 $this->chapters = $res->data;
                 $this->loading = false;

@@ -16,7 +16,7 @@ class HomePage extends BaseComponent {
     }
 
     function __rendered() {
-        $this->http->get("/api/plugins")->then(
+        $this->http->get("/api/v1/plugins")->then(
             function (Response $res) {
                 $this->plugins = $res->data;
                 $this->loading = false;
