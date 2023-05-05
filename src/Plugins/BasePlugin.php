@@ -3,6 +3,7 @@ namespace App\Plugins;
 
 use App\Models\Plugin;
 use App\Models\ScrapeResponse;
+use Deemon47\UserAgent;
 
 abstract class BasePlugin implements IPlugin, \JsonSerializable {
     public Plugin $info;
@@ -10,6 +11,7 @@ abstract class BasePlugin implements IPlugin, \JsonSerializable {
     protected string $baseUrl;
 
     protected function fetch(string $endpoint, bool $json, string $method = 'GET', array $query = [], array $headers = [], array $body = []) {
+        $useragent = (new UserAgent())->generate('windows');
         $url = $this->baseUrl . $endpoint;
         $ch = curl_init();
 
@@ -29,7 +31,8 @@ abstract class BasePlugin implements IPlugin, \JsonSerializable {
         curl_setopt_array($ch, [
             CURLOPT_URL => $url,
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_HEADER => false
+            CURLOPT_HEADER => false,
+            CURLOPT_USERAGENT => $useragent
         ]);
 
         $data = curl_exec($ch);

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a4f8754dc1409e7035bea1df213a596",
+    "content-hash": "30c1c5d157cd128484e1bdef2aa1dec5",
     "packages": [
         {
             "name": "brick/math",
@@ -60,6 +60,46 @@
                 }
             ],
             "time": "2023-01-15T23:15:59+00:00"
+        },
+        {
+            "name": "deemon47/user-agent-generator",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Deemon47/user-agent-generator.git",
+                "reference": "5af13fd2e905c5441eb4d61aad3a71bd1e801709"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Deemon47/user-agent-generator/zipball/5af13fd2e905c5441eb4d61aad3a71bd1e801709",
+                "reference": "5af13fd2e905c5441eb4d61aad3a71bd1e801709",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Deemon47\\": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "phpfail",
+                    "email": "phpfail@gihub.com"
+                },
+                {
+                    "name": "Dee",
+                    "email": "deemon47@gmail.com"
+                }
+            ],
+            "description": "Generate random User-Agent http header with parameters",
+            "support": {
+                "source": "https://github.com/Deemon47/user-agent-generator/tree/v1.0.1"
+            },
+            "time": "2020-04-11T12:05:34+00:00"
         },
         {
             "name": "doctrine/inflector",

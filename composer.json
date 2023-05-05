@@ -16,6 +16,7 @@
     "require": {
         "viewi/viewi": "^1.0",
         "illuminate/database": "^10.4",
-        "vlucas/phpdotenv": "^5.5"
+        "vlucas/phpdotenv": "^5.5",
+        "deemon47/user-agent-generator": "^1.0"
     }
 }
